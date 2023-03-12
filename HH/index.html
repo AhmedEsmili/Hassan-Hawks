@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="cursor-dot"></div>
     <div class="nav-links">
       <a href="#">Home</a>
       <a href="#">About Us</a>
@@ -20,5 +21,14 @@
         competitions.
       </p>
     </div>
+    <script>
+      document.addEventListener("mousemove", function (e) {
+        var cursorDot = document.querySelector(".cursor-dot");
+        setTimeout(function () {
+          cursorDot.style.left = e.clientX + "px";
+          cursorDot.style.top = e.clientY + "px";
+        }, 50); // Delay the update of the cursor position by 50 milliseconds
+      });
+    </script>
   </body>
 </html>

@@ -11,16 +11,27 @@ body {
   justify-content: center;
   height: 100vh;
 }
+
 @font-face {
   font-family: "Scania";
   src: url("fonts/ScaniaSansCYHeadline-Bold.woff2") format("woff2"),
     url("fonts/ScaniaSansCYHeadline-Bold.woff2") format("woff");
 }
+
 @font-face {
   font-family: "Axiforma";
   src: url("fonts/Axiforma-SemiBold.woff2") format("woff2"),
     url("fonts/Axiforma-SemiBold.woff") format("woff");
 }
+.cursor-dot {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: gold;
+  transition: all 0.3s ease-out; /* Add a transition to animate the position */
+}
+
 .nav-links {
   position: absolute;
   top: 65px;
@@ -32,6 +43,7 @@ body {
   margin-left: 10px;
   padding: 10px;
   color: #fff;
+  text-shadow: 0 0 4px #fff;
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
@@ -39,15 +51,18 @@ body {
 }
 
 .nav-links a:hover {
-  color: Gold;
+  color: gold;
+  text-shadow: 0 0 10px gold;
+  transition: 0.9s;
 }
 
 .contact-btn {
   display: inline-block;
   margin-left: 10px;
   padding: 10px;
+  border-radius: 8px;
   background-color: #000;
-  color: Gold;
+  color: gold;
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
@@ -56,10 +71,9 @@ body {
 }
 
 .contact-btn:hover {
-  background-color: #fff;
-  color: #000;
+  box-shadow: 0 0 5px gold;
   transition: 0.9s;
-  border: none;
+  border-color: gold;
 }
 
 .container {
@@ -74,17 +88,31 @@ h1 {
   font-family: "Scania", sans-serif;
   text-transform: uppercase;
   margin-bottom: 10px;
+  opacity: 0;
+  animation: fade-in 2s ease-out forwards;
 }
 
 p {
   margin: 0;
-  font-size: 23px;
+  font-size: 21px;
   font-family: Axiforma, sans-serif;
   line-height: 1.5;
-  max-width: 1019px;
+  max-width: 885px;
   margin: 0 auto;
   margin-bottom: 20px;
+  opacity: 0;
+  animation: fade-in 2s ease-out forwards 1s;
 }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* Styles for screens with a maximum width of 768 pixels */
 @media only screen and (max-width: 768px) {
   .nav-links {
@@ -100,29 +128,4 @@ p {
 }
 
 /* Styles for screens with a maximum width of 480 pixels */
-@media only screen and (max-width: 480px) {
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    top: 0;
-    right: 0;
-    padding: 20px;
-    background-color: #000;
-  }
-  .nav-links a {
-    margin: 5px 0;
-    padding: 5px;
-    font-size: 14px;
-  }
-  .contact-btn {
-    margin: 10px 0;
-    padding: 5px;
-    font-size: 14px;
-  }
-  h1 {
-    font-size: 60px;
-  }
-  p {
-    font-size: 16px;
-  }
-}
+@media only screen and (max-width: 480px);
