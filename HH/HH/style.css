@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  background-image: url("background1.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+@font-face {
+  font-family: "Scania";
+  src: url("fonts/ScaniaSansCYHeadline-Bold.woff2") format("woff2"),
+    url("fonts/ScaniaSansCYHeadline-Bold.woff2") format("woff");
+}
+
+@font-face {
+  font-family: "Axiforma";
+  src: url("fonts/Axiforma-SemiBold.woff2") format("woff2"),
+    url("fonts/Axiforma-SemiBold.woff") format("woff");
+}
+.cursor-dot {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: gold;
+  transition: all 0.3s ease-out; /* Add a transition to animate the position */
+}
+
+.nav-links {
+  position: absolute;
+  top: 65px;
+  right: 125px;
+}
+
+.nav-links a {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Scania", sans-serif;
+}
+
+.nav-links a:hover {
+  color: gold;
+  text-shadow: 0 0 10px gold;
+}
+
+.nav-links a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: gold;
+  transition: width 0.3s ease-in-out 0s;
+  width: 0%;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.contact-btn {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: gold;
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Scania", sans-serif;
+  cursor: pointer;
+}
+
+.contact-btn:hover {
+  transition: 0.9s;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+h1 {
+  margin: 0;
+  font-size: 125px;
+  font-family: "Scania", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fade-in 2s ease-out forwards;
+}
+
+p {
+  margin: 0;
+  font-size: 21px;
+  font-family: Axiforma, sans-serif;
+  line-height: 1.5;
+  max-width: 885px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fade-in 2s ease-out forwards 1s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Styles for screens with a maximum width of 768 pixels */
+@media only screen and (max-width: 768px) {
+  .nav-links {
+    top: 30px;
+    right: 10px;
+  }
+  h1 {
+    font-size: 80px;
+  }
+  p {
+    font-size: 18px;
+  }
+}
+
+/* Styles for screens with a maximum width of 480 pixels */
+@media only screen and (max-width: 480px);
